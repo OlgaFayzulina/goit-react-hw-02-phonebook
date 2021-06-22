@@ -1,0 +1,29 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  justify-content: space-between;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.details {
+  margin-bottom: 0;
+}
+
+.button {
+  width: 120px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+button:hover,
+button:focus {
+  background-color: rgb(32, 86, 202);
+}
