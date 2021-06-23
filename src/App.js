@@ -25,13 +25,16 @@ class App extends Component {
             number,
         };
        
-        contacts.sort(({ name }) => name === newContact.name)
+        const existedContact = contacts.find((contact) => 
+             contact.name === newContact.name
+        );
+        
+        existedContact
         ? alert('This contact already exist')
         : this.setState(({ contacts }) => ({
-          contacts: [newContact, ...contacts],
+            contacts: [newContact, ...contacts],
         }));
     };
-
 
     changeFilter = event => {
         this.setState({ filter: event.currentTarget.value });
@@ -42,7 +45,7 @@ class App extends Component {
         const normalizedFilter = filter.toLowerCase();
     
         return contacts.filter(contact =>
-          contact.name.toLowerCase().includes(normalizedFilter),
+          contact.name.toString().toLowerCase().includes(normalizedFilter),
         );
       };
 
